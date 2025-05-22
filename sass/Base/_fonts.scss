@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "Leotaro";
+  src: url("../assets/fonts/Leotaro.ttf") format("truetype"),
+    url("../assets/fonts/Leotaro.woff2") format("woff2"),
+    url("../assets/fonts/Leotaro.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neue Metana";
+  src: url("../assets/fonts/NeueMetana-Regular.woff2") format("woff2"),
+    url("../assets/fonts/NeueMetana-Regular.woff") format("woff"),
+    url("../assets/fonts/NeueMetana-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
