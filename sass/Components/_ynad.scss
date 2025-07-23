@@ -28,7 +28,7 @@ body,
     width: 100%;
     height: 100%;
     background-image: url("/src/assets/ynadpattern.png");
-    background-size: 100%;
+    background-size: cover;
     background-repeat: repeat;
     background-position: center;
     opacity: 0.04;
@@ -45,41 +45,43 @@ body,
     align-items: center;
     justify-content: center;
     padding: 2rem;
+    width: 100%;
+    max-width: 1200px;
   }
 
   &__logo {
-    width: 150px;
-    margin-bottom: 1rem;
+    width: clamp(80px, 12vw, 150px);
+    margin-bottom: clamp(0.5rem, 2vw, 1rem);
   }
 
   &__title {
     font-family: Leotaro;
     font-weight: 400;
-    font-size: 120px;
+    font-size: clamp(48px, 8vw, 120px);
     line-height: 100%;
     letter-spacing: -1px;
     text-transform: capitalize;
-    margin-bottom: 3rem;
+    margin-bottom: clamp(1.5rem, 4vw, 3rem);
     color: #e7e5df;
     text-shadow: 0 4px 24px rgba(0, 0, 0, 0.18), 0 1.5px 0 #fff2;
   }
 
   &__footer {
     position: absolute;
-    bottom: 1.5rem;
+    bottom: clamp(1rem, 3vw, 1.5rem);
     left: 0;
     right: 0;
     display: flex;
     justify-content: space-between;
-    font-size: 1rem; // Matches image
-    font-family: "Neue Metana", serif; // As specified
+    font-size: clamp(0.75rem, 2vw, 1rem);
+    font-family: "Neue Metana", serif;
     font-style: normal;
     font-weight: 400;
     text-align: center;
     line-height: normal;
     color: #fff;
-    opacity: 0.5; // As specified in Style
-    padding: 0 2rem;
+    opacity: 0.5;
+    padding: 0 clamp(1rem, 4vw, 2rem);
     z-index: 1;
 
     span {
@@ -96,26 +98,144 @@ body,
     }
   }
 }
+
 .sanctuary__decorative-image {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 800px; // Optional max width
+  max-width: min(800px, 90vw);
   height: auto;
   z-index: 1;
   opacity: 1;
   pointer-events: none;
 }
+
 .sanctuary__title-image {
-  width: 830px; // or any size you prefer (e.g., 40%, 15rem)
+  width: clamp(280px, 80vw, 830px);
   height: auto;
-  margin-bottom: 2rem; // optional spacing below the image
+  margin-bottom: clamp(1rem, 3vw, 2rem);
 }
+
 .sanctuary__footer {
   font-family: "Genos", sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+}
+
+// Mobile devices (portrait)
+@media (max-width: 480px) {
+  .sanctuary {
+    &__overlay {
+      padding: 1rem;
+    }
+
+    &__footer {
+      flex-direction: column;
+      gap: 0.5rem;
+      bottom: 1rem;
+
+      span {
+        text-align: center !important;
+        font-size: 0.875rem;
+      }
+    }
+  }
+
+  .sanctuary__decorative-image {
+    max-width: 95vw;
+  }
+}
+
+// Small tablets (portrait)
+@media (min-width: 481px) and (max-width: 768px) {
+  .sanctuary {
+    &__overlay {
+      padding: 1.5rem;
+    }
+
+    &__footer {
+      padding: 0 1.5rem;
+    }
+  }
+}
+
+// Tablets (landscape) and small desktops
+@media (min-width: 769px) and (max-width: 1024px) {
+  .sanctuary {
+    &__overlay {
+      padding: 2rem;
+    }
+  }
+}
+
+// Large desktops
+@media (min-width: 1025px) {
+  .sanctuary {
+    &__overlay {
+      padding: 2.5rem;
+    }
+  }
+}
+
+// Extra large screens
+@media (min-width: 1440px) {
+  .sanctuary {
+    &__overlay {
+      padding: 3rem;
+    }
+
+    &__footer {
+      padding: 0 3rem;
+    }
+  }
+}
+
+// Ultra-wide screens
+@media (min-width: 1920px) {
+  .sanctuary {
+    &__overlay {
+      padding: 4rem;
+    }
+
+    &__footer {
+      padding: 0 4rem;
+    }
+  }
+}
+
+// Landscape orientation adjustments for mobile
+@media (max-height: 500px) and (orientation: landscape) {
+  .sanctuary {
+    &__overlay {
+      padding: 1rem;
+    }
+
+    &__logo {
+      width: clamp(60px, 8vw, 100px);
+      margin-bottom: 0.5rem;
+    }
+
+    &__title-image {
+      width: clamp(200px, 60vw, 600px);
+      margin-bottom: 1rem;
+    }
+
+    &__footer {
+      bottom: 0.5rem;
+      font-size: 0.75rem;
+      padding: 0 1rem;
+    }
+  }
+}
+
+// High DPI displays
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .sanctuary {
+    &::before {
+      background-size: 200%;
+    }
+  }
 }
