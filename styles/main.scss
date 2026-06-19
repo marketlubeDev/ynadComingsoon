@@ -16,7 +16,7 @@ html {
 
 // keep anchored sections clear of the fixed header
 [id] {
-  scroll-margin-top: 92px;
+  scroll-margin-top: 96px;
 }
 
 body {
@@ -38,6 +38,13 @@ video {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+// Visible keyboard focus ring for every interactive control (WCAG 2.4.7)
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid $brass;
+  outline-offset: 3px;
 }
 
 ul {
@@ -214,35 +221,15 @@ ul {
   &__brand {
     display: flex;
     align-items: center;
-    gap: 0.85rem;
   }
 
   &__logo {
-    width: 46px;
+    width: 132px;
     height: auto;
     transition: width 0.5s $ease;
-  }
 
-  &__name {
-    display: flex;
-    flex-direction: column;
-    color: $cream;
-    line-height: 1.1;
-
-    strong {
-      font-family: $font-display;
-      font-size: 1.18rem;
-      font-weight: 500;
-      letter-spacing: 0.16em;
-    }
-
-    span {
-      font-size: 0.58rem;
-      font-weight: 400;
-      letter-spacing: 0.46em;
-      text-transform: uppercase;
-      color: $brass;
-      margin-top: 0.2rem;
+    @media (max-width: $bp-sm) {
+      width: 116px;
     }
   }
 
@@ -298,7 +285,7 @@ ul {
     padding: 0.85rem 0;
 
     .header__logo {
-      width: 38px;
+      width: 108px;
     }
   }
 
@@ -445,7 +432,8 @@ ul {
     h2 {
       font-family: $font-display;
       font-weight: 300;
-      font-size: clamp(2.6rem, 7vw, 5.2rem);
+      // short titles sized to stay on a single line down to ~320px wide
+      font-size: clamp(1.95rem, 8.5vw, 5.2rem);
       line-height: 1.05;
       letter-spacing: 0.01em;
       margin: 1rem 0 1.1rem;
@@ -459,7 +447,8 @@ ul {
       letter-spacing: 0.04em;
       color: $cream;
       text-shadow: 0 1px 16px rgba(0, 0, 0, 0.6);
-      max-width: 520px;
+      // wide enough to keep the short single-line subtitles on one line
+      max-width: 600px;
       animation: capRise 1.1s 0.24s $ease both;
     }
   }
@@ -470,6 +459,24 @@ ul {
     gap: 1rem;
     margin-top: 2.2rem;
     animation: capRise 1.1s 0.36s $ease both;
+
+    // matched, prominent hero CTAs — equal width, centered labels
+    .btn {
+      min-width: 230px;
+      justify-content: center;
+      font-size: 0.82rem;
+      padding: 1.05rem 2.45rem;
+
+      svg {
+        width: 17px;
+        height: 17px;
+      }
+
+      @media (max-width: $bp-sm) {
+        min-width: 0;
+        flex: 1 1 100%;
+      }
+    }
   }
 
   &__meta {
@@ -569,39 +576,29 @@ ul {
   }
 }
 
-/* ── Intro / About strip ──────────────────────────────────────── */
+/* ── Intro / Ambient film band ────────────────────────────────── */
 .intro {
   background: $ivory;
+  text-align: center;
 
-  &__grid {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: clamp(2.5rem, 6vw, 5.5rem);
-    align-items: center;
+  &__head {
+    max-width: 720px;
+    margin: 0 auto clamp(2rem, 4vw, 3rem);
 
-    @media (max-width: $bp-md) {
-      grid-template-columns: 1fr;
+    .section-title {
+      margin-top: 0.9rem;
     }
-  }
-
-  &__text p {
-    color: $ink-soft;
-    font-size: 1.05rem;
-    margin-top: 1.1rem;
-    max-width: 560px;
   }
 
   &__stats {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 2.6rem;
-    padding-top: 2rem;
-    border-top: 1px solid $line;
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    gap: clamp(2rem, 7vw, 5rem);
+    margin-top: clamp(2rem, 4vw, 3.2rem);
 
     @media (max-width: $bp-sm) {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.8rem;
+      gap: 1.6rem;
     }
   }
 
@@ -621,31 +618,69 @@ ul {
       color: $ink-soft;
     }
   }
+}
 
-  &__image {
-    position: relative;
-    border-radius: $radius-lg;
-    overflow: hidden;
-    aspect-ratio: 4 / 5;
-    box-shadow: $shadow-soft;
+.intro-film {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  background: $green-deep;
+  box-shadow: $shadow-soft;
 
-    img {
-      object-fit: cover;
-      transition: transform 1.4s $ease;
+  @media (max-width: $bp-md) {
+    aspect-ratio: 16 / 10;
+  }
+
+  &__clip {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.6s $ease;
+
+    &.is-active {
+      opacity: 1;
     }
+  }
 
-    &:hover img {
-      transform: scale(1.05);
-    }
+  &__scrim {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(13, 42, 25, 0.12) 0%,
+      rgba(13, 42, 25, 0) 35%,
+      rgba(13, 42, 25, 0.55) 100%
+    );
+    pointer-events: none;
+  }
 
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 14px;
-      border: 1px solid rgba(231, 229, 223, 0.45);
-      border-radius: calc($radius-lg - 6px);
-      pointer-events: none;
-    }
+  // brass inner hairline — the framing used across the brand
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 14px;
+    border: 1px solid rgba(231, 229, 223, 0.4);
+    border-radius: calc($radius-lg - 6px);
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  &__tag {
+    position: absolute;
+    left: clamp(1.2rem, 3vw, 2rem);
+    bottom: clamp(1.1rem, 3vw, 1.6rem);
+    z-index: 3;
+    color: rgba(231, 229, 223, 0.92);
+    font-size: 0.66rem;
+    font-weight: 400;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
   }
 }
 
@@ -714,8 +749,12 @@ ul {
     }
   }
 
+  &__media-link {
+    display: block;
+  }
+
   &__body {
-    padding: 1.8rem 1.7rem 2rem;
+    padding: 1.4rem 1.4rem 1.5rem;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -723,14 +762,22 @@ ul {
     h3 {
       font-family: $font-display;
       font-weight: 400;
-      font-size: 1.65rem;
+      font-size: 1.5rem;
       color: $green;
+
+      a {
+        transition: color 0.35s $ease;
+
+        &:hover {
+          color: $brass;
+        }
+      }
     }
 
     p {
       color: $ink-soft;
-      font-size: 0.95rem;
-      margin: 0.8rem 0 1.2rem;
+      font-size: 0.9rem;
+      margin: 0.55rem 0 1rem;
       flex: 1;
     }
   }
@@ -738,22 +785,423 @@ ul {
   &__details {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1.6rem;
+    gap: 0.45rem;
+    margin-bottom: 1.2rem;
 
     li {
-      font-size: 0.66rem;
-      letter-spacing: 0.16em;
+      font-size: 0.62rem;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: $green;
       border: 1px solid $line;
-      padding: 0.35rem 0.8rem;
+      padding: 0.3rem 0.7rem;
       border-radius: 999px;
     }
   }
 
-  .btn {
-    align-self: flex-start;
+  // Two equal, compact CTAs: filled "Check Availability" + outline "View Room"
+  &__actions {
+    display: flex;
+    gap: 0.6rem;
+    margin-top: auto;
+
+    .btn {
+      flex: 1 1 0;
+      min-width: 0;
+      justify-content: center;
+      gap: 0.4rem;
+      font-size: 0.63rem;
+      letter-spacing: 0.13em;
+      padding: 0.8rem 0.7rem;
+
+      svg {
+        width: 13px;
+        height: 13px;
+      }
+    }
+  }
+}
+
+/* ── Auto-fading slideshow (room cards) ───────────────────────── */
+.room-slideshow {
+  position: absolute;
+  inset: 0;
+
+  &__slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1.4s $ease;
+
+    img {
+      object-fit: cover;
+    }
+
+    &.is-active {
+      opacity: 1;
+    }
+  }
+}
+
+/* ── Room detail page ─────────────────────────────────────────── */
+.room-detail {
+  background: $ivory;
+}
+
+// Dark hero band (reuses .page-hero for header legibility + top padding).
+// The compound selector beats .page-hero's padding shorthand so the band can
+// sit tighter under the header — less dead space above the back button.
+.room-hero.page-hero {
+  padding-top: clamp(6.5rem, 12vh, 8.5rem);
+  padding-bottom: clamp(2rem, 4vw, 3rem);
+
+  @media (max-width: $bp-md) {
+    padding-top: clamp(5.8rem, 9vh, 7rem);
+    padding-bottom: 1.4rem;
+  }
+}
+
+.room-hero {
+  &__back {
+    position: relative;
+    z-index: 1;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.6rem 1.25rem 0.6rem 1rem;
+    border: 1px solid rgba(231, 229, 223, 0.32);
+    border-radius: 999px;
+    color: rgba(231, 229, 223, 0.85);
+    font-size: 0.66rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    margin-bottom: clamp(1.8rem, 4vw, 2.8rem);
+    transition: border-color 0.4s $ease, color 0.4s $ease, gap 0.4s $ease;
+
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+
+    &:hover {
+      color: $cream;
+      border-color: $brass;
+      gap: 0.85rem;
+    }
+  }
+
+  &__grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1.12fr 0.88fr;
+    gap: clamp(1.8rem, 4vw, 3.2rem);
+    align-items: center;
+
+    @media (max-width: $bp-lg) {
+      grid-template-columns: 1fr;
+      gap: clamp(1.8rem, 5vw, 2.6rem);
+    }
+  }
+
+  &__info h1 {
+    margin-top: 0.7rem;
+  }
+
+  &__info &__tagline {
+    font-family: $font-display;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+    color: rgba(231, 229, 223, 0.82);
+    margin-top: 0.7rem;
+    max-width: none;
+  }
+
+  &__specs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    margin: clamp(1.6rem, 3.5vw, 2.3rem) 0;
+    background: rgba(231, 229, 223, 0.14);
+    border: 1px solid rgba(231, 229, 223, 0.14);
+    border-radius: $radius-lg;
+    overflow: hidden;
+
+    @media (max-width: $bp-sm) {
+      grid-template-columns: 1fr;
+    }
+
+    > div {
+      background: rgba(13, 42, 25, 0.4);
+      padding: 0.95rem 1.2rem;
+    }
+
+    dt {
+      font-size: 0.6rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: $brass;
+    }
+
+    dd {
+      margin-top: 0.3rem;
+      font-family: $font-display;
+      font-size: 1.2rem;
+      color: $cream;
+    }
+  }
+
+  // Both CTAs the same compact size: equal flex basis + centered labels.
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+
+    .btn {
+      flex: 1 1 0;
+      min-width: 150px;
+      justify-content: center;
+      font-size: 0.72rem;
+      padding: 0.85rem 1.3rem;
+    }
+
+    // brass edge so the filled CTA reads as a discrete control on the dark
+    // green band (WCAG 1.4.11 non-text contrast)
+    .btn--solid {
+      border-color: $brass;
+    }
+
+    @media (max-width: $bp-sm) {
+      .btn {
+        flex-basis: 100%;
+      }
+    }
+  }
+}
+
+// Horizontal, swipeable photo carousel
+.room-carousel {
+  &__viewport {
+    position: relative;
+    border-radius: $radius-lg;
+    overflow: hidden;
+    border: 1px solid rgba(231, 229, 223, 0.12);
+    box-shadow: 0 30px 60px -32px rgba(0, 0, 0, 0.75);
+  }
+
+  &__track {
+    display: flex;
+    aspect-ratio: 3 / 2;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @media (max-width: $bp-sm) {
+      aspect-ratio: 4 / 3;
+    }
+  }
+
+  &__slide {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    scroll-snap-align: center;
+
+    img {
+      object-fit: cover;
+    }
+  }
+
+  &__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid rgba(231, 229, 223, 0.45);
+    background: rgba(13, 42, 25, 0.55);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: $cream;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.4s $ease, border-color 0.4s $ease,
+      transform 0.4s $ease;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    &:hover {
+      background: $green;
+      border-color: $brass;
+    }
+
+    &--prev {
+      left: 0.9rem;
+
+      svg {
+        transform: rotate(180deg);
+      }
+
+      &:hover {
+        transform: translateY(-50%) scale(1.06);
+      }
+    }
+
+    &--next {
+      right: 0.9rem;
+
+      &:hover {
+        transform: translateY(-50%) scale(1.06);
+      }
+    }
+
+    @media (max-width: $bp-sm) {
+      width: 40px;
+      height: 40px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+
+  &__count {
+    position: absolute;
+    right: 0.9rem;
+    bottom: 0.9rem;
+    z-index: 3;
+    background: rgba(13, 42, 25, 0.6);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: $cream;
+    font-size: 0.64rem;
+    letter-spacing: 0.16em;
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+  }
+
+  &__dots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.55rem;
+    margin-top: 1rem;
+  }
+
+  &__dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    border: 1px solid rgba(231, 229, 223, 0.55);
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.4s $ease, transform 0.4s $ease,
+      border-color 0.4s $ease;
+
+    &.is-active {
+      background: $brass;
+      border-color: $brass;
+      transform: scale(1.25);
+    }
+  }
+}
+
+// Ivory "about" section below the hero. Tighter than a default .section so
+// there's less dead white space after the hero CTAs and before the amenities.
+.room-about {
+  background: $ivory;
+  padding-top: clamp(3rem, 6vw, 5rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
+
+  @media (max-width: $bp-md) {
+    padding-top: clamp(2rem, 6vw, 3rem);
+    padding-bottom: clamp(1.6rem, 5vw, 2.4rem);
+  }
+
+  &__story {
+    max-width: 760px;
+
+    .section-title {
+      margin-top: 0.7rem;
+      margin-bottom: 1.4rem;
+    }
+
+    p {
+      color: $ink-soft;
+      font-size: 1.04rem;
+      margin-bottom: 1.15rem;
+    }
+  }
+
+  &__features {
+    margin-top: clamp(2.6rem, 5vw, 3.8rem);
+    padding-top: clamp(2.6rem, 5vw, 3.8rem);
+    border-top: 1px solid $line;
+
+    h3 {
+      font-family: $font-display;
+      font-weight: 400;
+      font-size: clamp(1.4rem, 2.6vw, 1.85rem);
+      color: $green;
+      margin-bottom: clamp(1.2rem, 2.5vw, 1.8rem);
+    }
+
+    ul {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.6rem 2rem;
+
+      @media (max-width: $bp-md) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: $bp-sm) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    li {
+      position: relative;
+      padding: 0.2rem 0 0.75rem 1.5rem;
+      font-size: 0.95rem;
+      color: $ink;
+      border-bottom: 1px solid $line;
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0.7em;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: $brass;
+      }
+    }
+  }
+}
+
+// On the room detail page, tighten the amenities section's top padding on
+// mobile so the gap after the about block isn't doubled (homepage unaffected).
+.room-detail .amenities {
+  @media (max-width: $bp-md) {
+    padding-top: clamp(2rem, 6vw, 3rem);
   }
 }
 
@@ -902,23 +1350,17 @@ ul {
   }
 }
 
-/* ── Amenities ────────────────────────────────────────────────── */
+/* ── Amenities (compact homepage strip) ───────────────────────── */
 .amenities {
   background: $ivory;
 
   &__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: clamp(1.2rem, 2.6vw, 2rem);
+    gap: clamp(1rem, 2vw, 1.5rem);
 
-    @media (max-width: $bp-lg) {
+    @media (max-width: $bp-md) {
       grid-template-columns: repeat(2, 1fr);
-    }
-
-    @media (max-width: $bp-sm) {
-      grid-template-columns: 1fr;
-      max-width: 440px;
-      margin-inline: auto;
     }
   }
 
@@ -930,16 +1372,19 @@ ul {
       width: 100%;
     }
   }
+
+  &__cta {
+    text-align: center;
+    margin-top: clamp(2rem, 4vw, 3rem);
+  }
 }
 
 .amenity-card {
   position: relative;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
   border-radius: $radius-lg;
   overflow: hidden;
-  cursor: pointer;
   box-shadow: $shadow-soft;
-  outline: none;
 
   img {
     object-fit: cover;
@@ -953,69 +1398,29 @@ ul {
     inset: 0;
     background: linear-gradient(
       180deg,
-      rgba(13, 42, 25, 0.05) 40%,
+      rgba(13, 42, 25, 0.02) 45%,
       rgba(13, 42, 25, 0.82) 100%
     );
-    transition: background 0.6s $ease, opacity 0.6s $ease;
+    transition: background 0.6s $ease;
     pointer-events: none;
-  }
-
-  &__badge {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 3;
-    font-size: 0.58rem;
-    font-weight: 400;
-    letter-spacing: 0.26em;
-    text-transform: uppercase;
-    padding: 0.45rem 0.95rem;
-    border-radius: 999px;
-    color: $cream;
-    background: rgba(13, 42, 25, 0.55);
-    border: 1px solid rgba(231, 229, 223, 0.35);
-    backdrop-filter: blur(8px);
-    opacity: 0;
-    transform: translateY(-8px);
-    transition: opacity 0.5s $ease, transform 0.5s $ease;
-
-    &.is-included {
-      background: rgba(185, 157, 107, 0.92);
-      border-color: transparent;
-      color: #fff;
-    }
   }
 
   &__caption {
     position: absolute;
     inset: auto 0 0 0;
     z-index: 2;
-    padding: 1.5rem 1.5rem 1.4rem;
+    padding: 1.1rem 1.25rem 1.15rem;
     color: $cream;
 
     h3 {
       font-family: $font-display;
       font-weight: 400;
-      font-size: 1.6rem;
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
       letter-spacing: 0.02em;
-      transition: transform 0.6s $ease;
-    }
-
-    p {
-      font-size: 0.86rem;
-      font-weight: 300;
-      line-height: 1.6;
-      color: rgba(231, 229, 223, 0.92);
-      max-height: 0;
-      opacity: 0;
-      transform: translateY(12px);
-      transition: max-height 0.6s $ease, opacity 0.6s $ease,
-        transform 0.6s $ease, margin-top 0.6s $ease;
     }
   }
 
-  &:hover,
-  &:focus-visible {
+  &:hover {
     img {
       transform: scale(1.06);
     }
@@ -1023,36 +1428,143 @@ ul {
     &::after {
       background: linear-gradient(
         180deg,
-        rgba(13, 42, 25, 0.25) 0%,
-        rgba(13, 42, 25, 0.92) 100%
+        rgba(13, 42, 25, 0.2) 0%,
+        rgba(13, 42, 25, 0.9) 100%
       );
     }
+  }
+}
 
-    .amenity-card__badge {
-      opacity: 1;
-      transform: none;
+/* ── Amenities (full /amenities page) ─────────────────────────── */
+.amenities-page {
+  background: $ivory;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.4rem, 3vw, 2.2rem);
+
+    @media (max-width: $bp-lg) {
+      grid-template-columns: repeat(2, 1fr);
     }
 
-    .amenity-card__caption p {
-      max-height: 9em;
-      opacity: 1;
-      transform: none;
-      margin-top: 0.55rem;
+    @media (max-width: $bp-sm) {
+      grid-template-columns: 1fr;
+      max-width: 420px;
+      margin-inline: auto;
     }
   }
 
-  // touch devices have no hover — keep description & badge visible
-  @media (hover: none) {
-    &__badge {
-      opacity: 1;
-      transform: none;
+  &__grid > .reveal {
+    display: flex;
+
+    > * {
+      width: 100%;
+    }
+  }
+
+  &__cta {
+    margin-top: clamp(3rem, 6vw, 5rem);
+    text-align: center;
+    padding: clamp(2.4rem, 5vw, 3.6rem);
+    border: 1px solid $line;
+    border-radius: $radius-lg;
+    background: $ivory-2;
+
+    h2 {
+      font-family: $font-display;
+      font-weight: 400;
+      font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+      color: $green;
     }
 
-    &__caption p {
-      max-height: 9em;
-      opacity: 1;
-      transform: none;
-      margin-top: 0.55rem;
+    p {
+      margin: 0.8rem auto 1.6rem;
+      max-width: 460px;
+      color: $ink-soft;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+}
+
+.amenity-tile {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #fff;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-soft;
+  transition: transform 0.6s $ease, box-shadow 0.6s $ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 26px 56px -26px rgba(13, 42, 25, 0.42);
+
+    .amenity-tile__media img {
+      transform: scale(1.06);
+    }
+  }
+
+  &__media {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+
+    img {
+      object-fit: cover;
+      transition: transform 1.3s $ease;
+    }
+  }
+
+  &__badge {
+    position: absolute;
+    top: 0.9rem;
+    right: 0.9rem;
+    z-index: 2;
+    font-size: 0.56rem;
+    font-weight: 400;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.85rem;
+    border-radius: 999px;
+    color: $cream;
+    // opaque enough to hold AA contrast over bright photo regions too
+    background: rgba(13, 42, 25, 0.85);
+    border: 1px solid rgba(231, 229, 223, 0.32);
+    backdrop-filter: blur(6px);
+
+    &.is-included {
+      background: rgba(185, 157, 107, 0.96);
+      border-color: transparent;
+      // deep-green on brass ≈ 5.9:1 (white-on-brass failed AA at 2.6:1)
+      color: $green-deep;
+    }
+  }
+
+  &__body {
+    padding: 1.3rem 1.4rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+
+    h2 {
+      font-family: $font-display;
+      font-weight: 400;
+      font-size: 1.5rem;
+      color: $green;
+    }
+
+    p {
+      font-size: 0.92rem;
+      color: $ink-soft;
     }
   }
 }
@@ -1677,7 +2189,8 @@ ul {
 
   &__brand {
     img {
-      width: 56px;
+      width: 150px;
+      height: auto;
       margin-bottom: 1.1rem;
     }
 

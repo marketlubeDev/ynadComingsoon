@@ -1,8 +1,6 @@
-import Image from "next/image";
 import { ROOMS } from "@/data/home";
-import { waLink } from "@/data/site";
-import { WhatsAppIcon } from "./icons";
 import Reveal from "./Reveal";
+import RoomCard from "./RoomCard";
 
 export default function Rooms() {
   return (
@@ -22,34 +20,7 @@ export default function Rooms() {
         <div className="rooms__grid">
           {ROOMS.map((room, i) => (
             <Reveal key={room.slug} delay={i * 0.12}>
-              <article className="room-card">
-                <div className="room-card__media">
-                  <Image
-                    src={room.image}
-                    alt={`${room.name} at YNAD Mount Resort, Wayanad`}
-                    fill
-                    sizes="(max-width: 820px) 100vw, 33vw"
-                  />
-                  <span>{room.name}</span>
-                </div>
-                <div className="room-card__body">
-                  <h3>{room.name}</h3>
-                  <p>{room.blurb}</p>
-                  <ul className="room-card__details">
-                    {room.details.map((d) => (
-                      <li key={d}>{d}</li>
-                    ))}
-                  </ul>
-                  <a
-                    className="btn btn--dark"
-                    href={waLink(room.wa)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <WhatsAppIcon /> Check Availability
-                  </a>
-                </div>
-              </article>
+              <RoomCard room={room} />
             </Reveal>
           ))}
         </div>

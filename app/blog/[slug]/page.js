@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BLOGS, getBlog } from "@/data/blogs";
 import { SITE, waLink } from "@/data/site";
-import { WhatsAppIcon, ArrowIcon } from "@/components/icons";
+import { ArrowIcon } from "@/components/icons";
 
 export function generateStaticParams() {
   return BLOGS.map((post) => ({ slug: post.slug }));
@@ -92,7 +92,7 @@ export default async function BlogPostPage({ params }) {
           <div className="article__cta">
             <h3>Come see it for yourself</h3>
             <p>
-              Vintage homes, premium mist-view rooms and deluxe stays at
+              Vintage homes, premium mist-view rooms and junior suites at
               Valathoor, Rippon — message us for dates and our best rates.
             </p>
             <a
@@ -101,7 +101,7 @@ export default async function BlogPostPage({ params }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <WhatsAppIcon /> Check Availability
+              Check Availability
             </a>
           </div>
         </div>

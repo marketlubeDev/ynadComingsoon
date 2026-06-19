@@ -59,7 +59,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "YNAD Mount Resort | Wayanad",
     description:
-      "A sanctuary above the mist — vintage homes & premium rooms in Meppadi, Wayanad.",
+      "A sanctuary above the mist — vintage homes & premium suites in Meppadi, Wayanad.",
   },
   robots: { index: true, follow: true },
 };
@@ -69,7 +69,7 @@ const resortJsonLd = {
   "@type": "Resort",
   name: SITE.name,
   description:
-    "A hillside resort in the tea country of Rippon, Meppadi, Wayanad — vintage homes, premium and deluxe rooms wrapped in mist.",
+    "A hillside resort in the tea country of Rippon, Meppadi, Wayanad — vintage homes, premium suites and junior suites wrapped in mist.",
   url: SITE.baseUrl,
   telephone: SITE.phone,
   email: SITE.email,

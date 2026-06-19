@@ -37,16 +37,12 @@ export default function Header() {
         <Link href="/" className="header__brand" onClick={() => setOpen(false)}>
           <Image
             src="/brand/ynadlogo.svg"
-            alt="YNAD Mount Resort logo"
-            width={46}
-            height={46}
+            alt="YNAD Mount Resort"
+            width={150}
+            height={60}
             className="header__logo"
             priority
           />
-          <span className="header__name">
-            <strong>YNAD</strong>
-            <span>Mount Resort</span>
-          </span>
         </Link>
 
         <nav className={`header__nav${open ? " is-open" : ""}`}>

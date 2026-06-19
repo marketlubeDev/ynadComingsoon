@@ -38,7 +38,7 @@ export const BLOGS = [
       {
         h2: "Rooms: match the stay to the travellers",
         paras: [
-          "A good resort offers different answers for different trips. Travelling as a family or a group of friends? Look for independent cottages or heritage-style homes — at YNAD that's our Vintage Home, a planter's-era house with deep verandas. Couples should prioritise privacy and a view: our Premium Rooms open onto mist-facing balconies. Solo travellers and short-stay explorers do well in a Deluxe Room — comfortable, quiet and great value.",
+          "A good resort offers different answers for different trips. Travelling as a family or a group of friends? Look for independent cottages or heritage-style homes — at YNAD that's our Vintage Home, a planter's-era house with deep verandas. Couples should prioritise privacy and a view: our Premium Suite opens onto a valley-facing balcony. Solo travellers and short-stay explorers do well in our Junior Suite — spacious, quiet and easy to settle into.",
         ],
       },
       {
@@ -120,7 +120,7 @@ export const BLOGS = [
         h2: "What to look for (and what to skip)",
         paras: [
           "Look for: mist or valley-facing balconies, in-room coffee, candlelight dinner arrangements, and resorts that are couple-friendly without question or judgement. Skip: properties built around large group events — a wedding party next door changes the mood of a hillside very quickly.",
-          "Our Premium Rooms at YNAD Mount Resort were designed for exactly this brief — a king bed, soft thin-curtained light, and a balcony where the Chembra mist arrives like room service. Add our Honeymoon Hideaway offer and the candlelight dinner is on us.",
+          "Our Premium Suite at YNAD Mount Resort was designed for exactly this brief — a king bed, soft thin-curtained light, and a balcony where the Chembra mist arrives like room service. Add our Honeymoon Hideaway offer and the candlelight dinner is on us.",
         ],
       },
       {

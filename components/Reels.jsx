@@ -26,7 +26,7 @@ function ReelVideo({ src, label }) {
 
   return (
     <figure className="reel-card">
-      <video ref={ref} src={src} muted loop playsInline preload="metadata" />
+      <video ref={ref} src={src} muted loop playsInline preload="none" />
       <span>{label}</span>
     </figure>
   );

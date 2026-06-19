@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { HERO_SLIDES } from "@/data/home";
 import { waLink } from "@/data/site";
-import { WhatsAppIcon } from "./icons";
 
 const INTERVAL = 3000;
 
@@ -57,7 +56,7 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <WhatsAppIcon /> Check Availability
+              Check Availability
             </a>
             <a className="btn btn--light" href="#rooms">
               Explore Rooms

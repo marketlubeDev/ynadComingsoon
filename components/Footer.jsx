@@ -19,9 +19,9 @@ export default function Footer() {
         <div className="footer__brand">
           <Image
             src="/brand/ynadlogo.svg"
-            alt="YNAD Mount Resort logo"
-            width={56}
-            height={56}
+            alt="YNAD Mount Resort"
+            width={170}
+            height={68}
           />
           <p>
             A hillside sanctuary in the tea country of Rippon, Meppadi — built
@@ -39,7 +39,7 @@ export default function Footer() {
               <Link href="/#offers">Offers</Link>
             </li>
             <li>
-              <Link href="/#amenities">Amenities</Link>
+              <Link href="/amenities">Amenities</Link>
             </li>
             <li>
               <Link href="/#experience">The Experience</Link>
@@ -54,13 +54,13 @@ export default function Footer() {
           <h4>Stays</h4>
           <ul className="footer__links">
             <li>
-              <Link href="/#rooms">Vintage Home</Link>
+              <Link href="/rooms/vintage-home">Vintage Home</Link>
             </li>
             <li>
-              <Link href="/#rooms">Premium Room</Link>
+              <Link href="/rooms/premium-suite">Premium Suite</Link>
             </li>
             <li>
-              <Link href="/#rooms">Deluxe Room</Link>
+              <Link href="/rooms/junior-suite">Junior Suite</Link>
             </li>
           </ul>
         </div>

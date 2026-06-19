@@ -1,6 +1,8 @@
+import Link from "next/link";
 import Image from "next/image";
-import { AMENITIES } from "@/data/home";
+import { HOME_AMENITIES } from "@/data/home";
 import Reveal from "./Reveal";
+import { ArrowIcon } from "./icons";
 
 export default function Amenities() {
   return (
@@ -18,30 +20,29 @@ export default function Amenities() {
         </Reveal>
 
         <div className="amenities__grid">
-          {AMENITIES.map((item, i) => (
-            <Reveal key={item.name} delay={(i % 3) * 0.1}>
-              <figure className="amenity-card" tabIndex={0}>
+          {HOME_AMENITIES.map((item, i) => (
+            <Reveal key={item.name} delay={(i % 3) * 0.08}>
+              <figure className="amenity-card">
                 <Image
                   src={item.image}
                   alt={`${item.name} at YNAD Mount Resort, Wayanad`}
                   fill
-                  sizes="(max-width: 820px) 100vw, 33vw"
+                  sizes="(max-width: 560px) 50vw, (max-width: 1080px) 33vw, 380px"
+                  loading="lazy"
                 />
-                <span
-                  className={`amenity-card__badge${
-                    item.included ? " is-included" : ""
-                  }`}
-                >
-                  {item.badge || (item.included ? "Included" : "Extra charge")}
-                </span>
                 <figcaption className="amenity-card__caption">
                   <h3>{item.name}</h3>
-                  <p>{item.desc}</p>
                 </figcaption>
               </figure>
             </Reveal>
           ))}
         </div>
+
+        <Reveal className="amenities__cta">
+          <Link className="btn btn--dark" href="/amenities">
+            View all amenities <ArrowIcon />
+          </Link>
+        </Reveal>
       </div>
     </section>
   );
