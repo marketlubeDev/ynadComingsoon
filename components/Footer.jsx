@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { SITE, waLink } from "@/data/site";
+import { SITE, waLink, mailLink } from "@/data/site";
 
 export default function Footer() {
   return (
@@ -81,7 +81,7 @@ export default function Footer() {
               WhatsApp {SITE.phone}
             </a>
             <br />
-            <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+            <a href={mailLink()}>{SITE.email}</a>
           </address>
         </div>
       </div>

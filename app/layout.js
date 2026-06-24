@@ -82,6 +82,12 @@ const resortJsonLd = {
     addressCountry: SITE.address.country,
   },
   areaServed: SITE.geoArea,
+  hasMap: SITE.mapsQuery,
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: SITE.geo.lat,
+    longitude: SITE.geo.lng,
+  },
   image:
     "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1200&q=80",
   priceRange: "₹₹",

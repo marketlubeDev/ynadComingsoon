@@ -16,7 +16,11 @@ export const SITE = {
     full: "Valathoor, Rippon, Meppadi, Wayanad, Kerala 673577, India",
   },
   geoArea: "Wayanad, Kerala",
-  mapsQuery: "https://www.google.com/maps/search/?api=1&query=Ynad+Mount+Resort+Valathoor+Rippon+Meppadi+Wayanad",
+  geo: { lat: 11.5222241, lng: 76.1734791 },
+  // Exact Google Maps place listing for YNAD Mount Resort (opens the pin on
+  // mobile + desktop). Volatile session params from the share URL are dropped.
+  mapsQuery:
+    "https://www.google.com/maps/place/YNAD+MOUNT+RESORT/@11.5222241,76.1734791,17z/data=!3m1!4b1!4m9!3m8!1s0x3ba6130013a1ca19:0x8ff828d219ae7526!5m2!4m1!1i2!8m2!3d11.5222241!4d76.1734791!16s%2Fg%2F11zk1v9rj8",
 };
 
 export function waLink(message) {
@@ -25,4 +29,10 @@ export function waLink(message) {
       "Hi YNAD Mount Resort! I'd like to check availability for my stay in Wayanad."
   );
   return `https://wa.me/${SITE.whatsappNumber}?text=${text}`;
+}
+
+// Opens the visitor's mail client with a pre-filled compose to the resort.
+export function mailLink(subject) {
+  const s = subject || "Enquiry — YNAD Mount Resort, Wayanad";
+  return `mailto:${SITE.email}?subject=${encodeURIComponent(s)}`;
 }
