@@ -45,7 +45,7 @@ export const BLOGS = [
         h2: "The checklist before you book",
         paras: [
           "Ask these five questions of any Wayanad resort: How far is the nearest main road? Can I see hills or gardens from my room? Is food cooked fresh on site? How close are Chembra, Soochipara and the tea estates? And can I talk to a human before booking?",
-          "That last one matters more than people expect. Resorts that take bookings over WhatsApp — like we do at +91 99470 59008 — tend to be the ones where a real person will also remember your name at breakfast.",
+          "That last one matters more than people expect. Resorts that take bookings over WhatsApp — like we do at +91 99951 49001 — tend to be the ones where a real person will also remember your name at breakfast.",
         ],
       },
     ],
@@ -86,7 +86,7 @@ export const BLOGS = [
         h2: "Make it a morning ritual",
         paras: [
           "The secret the brochures don't tell you: the best time at any hill pool is 6:30 in the morning, before breakfast, when the mist is still tangled in the valley below. Swim, then towel off with a tumbler of Wayanad coffee in hand.",
-          "At YNAD Mount Resort, our hillside at Rippon looks out over exactly this kind of morning. Message us on WhatsApp at +91 99470 59008 to ask about our current pool access and view rooms — we'll tell you honestly what's open and what the mist is doing this week.",
+          "At YNAD Mount Resort, our hillside at Rippon looks out over exactly this kind of morning. Message us on WhatsApp at +91 99951 49001 to ask about our current pool access and view rooms — we'll tell you honestly what's open and what the mist is doing this week.",
         ],
       },
     ],
@@ -127,7 +127,7 @@ export const BLOGS = [
         h2: "A two-day itinerary for couples",
         paras: [
           "Day one: arrive by noon, lunch at the resort, walk the Rippon tea gardens at golden hour, dinner under candles. Day two: sunrise at Chembra Peak's heart-shaped lake (book the forest permit a day ahead), a waterfall stop at Soochipara, and an evening doing absolutely nothing on your balcony. That last item is the one you'll remember.",
-          "Tell us your dates on WhatsApp at +91 99470 59008 and we'll hold the quietest corner of the hill for you.",
+          "Tell us your dates on WhatsApp at +91 99951 49001 and we'll hold the quietest corner of the hill for you.",
         ],
       },
     ],
@@ -167,7 +167,7 @@ export const BLOGS = [
         h2: "Planning the days",
         paras: [
           "With a mixed-age group, plan one outing per day, not three. The 900 Kandi glass bridge thrills teenagers; Soochipara Falls has viewpoints that don't require the full hike; Pookode Lake offers pedal boats for small children; and the tea estate walks around Meppadi are flat enough for everyone.",
-          "Then come back to the resort early. The best part of a family trip to Wayanad is usually the unplanned hours — board games while it rains, an evening bonfire, dinner that goes on too long. Message +91 99470 59008 on WhatsApp with your headcount and we'll set the house up for you.",
+          "Then come back to the resort early. The best part of a family trip to Wayanad is usually the unplanned hours — board games while it rains, an evening bonfire, dinner that goes on too long. Message +91 99951 49001 on WhatsApp with your headcount and we'll set the house up for you.",
         ],
       },
     ],
@@ -208,7 +208,7 @@ export const BLOGS = [
         h2: "A monsoon survival guide (you won't need much)",
         paras: [
           "Pack quick-dry layers, sandals you can wade in and one warm thing for the evenings. Waterfall visits are best in the morning before the afternoon swell. And say yes to pazham pori and chai when the kitchen offers — fried banana fritters during a downpour is the entire point of the season.",
-          "If the forecast says rain over Wayanad, that's your sign. WhatsApp us at +91 99470 59008 and come watch the weather from the right side of the window.",
+          "If the forecast says rain over Wayanad, that's your sign. WhatsApp us at +91 99951 49001 and come watch the weather from the right side of the window.",
         ],
       },
     ],
@@ -250,7 +250,7 @@ export const BLOGS = [
         h2: "Evening: tea country",
         paras: [
           "The Rippon and Meppadi estates have been growing tea since the British era, and the estate roads make for the best golden-hour walks in Wayanad — rolling green corridors with mist threading through the bushes. Stop at a local stall for chai and bonda, and you've had the most Kerala evening possible.",
-          "Staying at YNAD Mount Resort puts you inside this map: Valathoor sits in Rippon itself, with every spot above within a 30-minute drive. Message +91 99470 59008 and we'll plan your three days, permits and all.",
+          "Staying at YNAD Mount Resort puts you inside this map: Valathoor sits in Rippon itself, with every spot above within a 30-minute drive. Message +91 99951 49001 and we'll plan your three days, permits and all.",
         ],
       },
     ],

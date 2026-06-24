@@ -8,7 +8,7 @@ import { waLink } from "@/data/site";
 const NAV = [
   { href: "/#rooms", label: "Rooms" },
   { href: "/#offers", label: "Offers" },
-  { href: "/#experience", label: "Experience" },
+  { href: "/#amenities", label: "Amenities" },
   { href: "/blog", label: "Journal" },
   { href: "/#contact", label: "Contact" },
 ];

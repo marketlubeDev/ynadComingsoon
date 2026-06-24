@@ -3,8 +3,8 @@ export const SITE = {
   legalName: "YNAD Mount Resort, Wayanad",
   tagline: "A sanctuary above the mist",
   baseUrl: "https://www.ynadresort.in",
-  phone: "+91 99470 59008",
-  whatsappNumber: "919947059008",
+  phone: "+91 99951 49001",
+  whatsappNumber: "919995149001",
   email: "ynadresort@gmail.com",
   address: {
     line: "Valathoor, Rippon, Meppadi",

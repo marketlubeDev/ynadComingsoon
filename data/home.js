@@ -263,14 +263,16 @@ export const OFFERS = [
 export const AMENITIES = [
   {
     name: "Infinity Pool",
-    image: u("photo-1668276490368-409a6002756d", 800),
+    // Real YNAD photo (optimized to 1200px-wide JPEG in /public/amenities)
+    image: "/amenities/pool.jpg",
     desc: "Swim to the edge and watch the valley fall away below — best at sunrise, when the mist is still in the trees.",
     included: true,
     highlight: true,
   },
   {
     name: "Restaurant",
-    image: u("photo-1414235077428-338989a2e8c0", 800),
+    // Real YNAD photo (optimized to 1200px-wide JPEG in /public/amenities)
+    image: "/amenities/resto.jpg",
     desc: "Kerala home cooking and slow continental classics, made fresh with produce from the hills around us.",
     included: false,
     badge: "À la carte",
@@ -292,7 +294,7 @@ export const AMENITIES = [
   },
   {
     name: "BBQ Facility",
-    image: u("photo-1529193591184-b1d58069ecdd", 800),
+    image: u("photo-1555939594-58d7cb561ad1", 800),
     desc: "Grill under the stars — we set up the barbecue, you bring the appetite.",
     included: false,
     badge: "On request",
@@ -455,7 +457,7 @@ export const FAQS = [
   },
   {
     q: "How do I book a room?",
-    a: "The fastest way is WhatsApp. Message us at +91 99470 59008 with your dates and we'll confirm availability and our best direct rates within minutes.",
+    a: "The fastest way is WhatsApp. Message us at +91 99951 49001 with your dates and we'll confirm availability and our best direct rates within minutes.",
   },
   {
     q: "Is the resort suitable for families with children?",
