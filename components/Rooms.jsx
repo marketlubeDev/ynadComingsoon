@@ -12,7 +12,7 @@ export default function Rooms() {
             Three ways to <em>slow down</em>
           </h2>
           <p>
-            From a planter&apos;s-era home to refined mist-view rooms — every
+            From a planter&apos;s-era home to refined mist-view rooms, every
             stay opens into the green hush of Rippon&apos;s tea country.
           </p>
         </Reveal>

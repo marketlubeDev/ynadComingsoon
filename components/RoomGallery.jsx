@@ -70,7 +70,7 @@ export default function RoomGallery({ images, alt, interval = 5000 }) {
             >
               <Image
                 src={src}
-                alt={`${alt} — view ${i + 1}`}
+                alt={`${alt}, view ${i + 1}`}
                 fill
                 sizes="(max-width: 980px) 100vw, 60vw"
                 priority={i === 0}

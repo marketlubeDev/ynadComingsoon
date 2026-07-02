@@ -13,7 +13,7 @@ export default function Offers() {
             Small luxuries, <em>quietly priced</em>
           </h2>
           <p>
-            Direct bookings on WhatsApp always get our best rate — and a few
+            Direct bookings on WhatsApp always get our best rate, and a few
             extra reasons to stay longer.
           </p>
         </Reveal>

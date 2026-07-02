@@ -32,7 +32,7 @@ export default function RoomSlideshow({
         >
           <Image
             src={src}
-            alt={`${alt} — view ${i + 1}`}
+            alt={`${alt}, view ${i + 1}`}
             fill
             sizes={sizes}
             priority={priority && i === 0}

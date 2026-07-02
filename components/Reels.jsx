@@ -45,7 +45,7 @@ export default function Reels() {
             The hills, <em>in motion</em>
           </h2>
           <p>
-            Mist, monsoon and waterfalls — small films from our corner of
+            Mist, monsoon and waterfalls: small films from our corner of
             Wayanad. Hover to pause and stay a while.
           </p>
         </Reveal>

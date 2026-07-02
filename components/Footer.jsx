@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="container">
           <span className="kicker">YNAD Mount Resort · Wayanad</span>
           <h2>
-            Some places you visit. This one quietly becomes your second home —
+            Some places you visit. This one quietly becomes your second home,
             where the mist comes down to rest, and so do you.
           </h2>
         </div>
@@ -24,7 +24,7 @@ export default function Footer() {
             height={68}
           />
           <p>
-            A hillside sanctuary in the tea country of Rippon, Meppadi — built
+            A hillside sanctuary in the tea country of Rippon, Meppadi, built
             for slow mornings, moody weather and people who collect silences.
           </p>
         </div>

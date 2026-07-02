@@ -93,7 +93,7 @@ export default async function BlogPostPage({ params }) {
             <h3>Come see it for yourself</h3>
             <p>
               Vintage homes, premium mist-view rooms and junior suites at
-              Valathoor, Rippon — message us for dates and our best rates.
+              Valathoor, Rippon. Message us for dates and our best rates.
             </p>
             <a
               className="btn btn--dark"

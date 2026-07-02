@@ -6,7 +6,7 @@ import Reveal from "@/components/Reveal";
 import { ArrowIcon } from "@/components/icons";
 
 export const metadata = {
-  title: "Amenities — Pools, Spa, Bonfire, Games & More",
+  title: "Amenities: Pools, Spa, Bonfire, Games & More",
   description:
     "Every amenity at YNAD Mount Resort, Wayanad: infinity pool, spa, gym, bonfire with music, indoor & outdoor games, BBQ, restaurant, conference hall, 24-hour hot water and security, free WiFi and more.",
   alternates: { canonical: "/amenities" },
@@ -27,7 +27,7 @@ export default function AmenitiesPage() {
             Everything for a <em>slow hillside stay</em>
           </h1>
           <p>
-            From sunrise swims to bonfires under the stars — here is everything
+            From sunrise swims to bonfires under the stars, here is everything
             waiting for you at YNAD Mount Resort, Wayanad.
           </p>
         </div>
@@ -67,7 +67,7 @@ export default function AmenitiesPage() {
           <Reveal className="amenities-page__cta">
             <h2>Ready to settle into the hills?</h2>
             <p>
-              Message us on WhatsApp with your dates — we&apos;ll confirm
+              Message us on WhatsApp with your dates. We&apos;ll confirm
               availability and our best direct rates within minutes.
             </p>
             <div className="amenities-page__actions">

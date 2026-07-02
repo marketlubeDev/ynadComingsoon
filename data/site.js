@@ -33,6 +33,6 @@ export function waLink(message) {
 
 // Opens the visitor's mail client with a pre-filled compose to the resort.
 export function mailLink(subject) {
-  const s = subject || "Enquiry — YNAD Mount Resort, Wayanad";
+  const s = subject || "Enquiry: YNAD Mount Resort, Wayanad";
   return `mailto:${SITE.email}?subject=${encodeURIComponent(s)}`;
 }

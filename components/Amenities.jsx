@@ -14,7 +14,7 @@ export default function Amenities() {
             All you get, <em>and a little more</em>
           </h2>
           <p>
-            Everything a hill stay should come with — and a few things worth
+            Everything a hill stay should come with, and a few things worth
             leaving the veranda for.
           </p>
         </Reveal>

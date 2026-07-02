@@ -1,4 +1,4 @@
-// Images stay on Unsplash's own CDN (Next image optimization is off — see
+// Images stay on Unsplash's own CDN (Next image optimization is off; see
 // next.config.mjs). Right-sizing the `w` param is therefore the main lever
 // for payload, so each call passes a width close to its real display size.
 const u = (id, w = 1600) =>
@@ -36,7 +36,7 @@ export const HERO_SLIDES = [
 // instantly and covers the brief moment before the clip buffers.
 //
 // The file lives in /public/video, so on Vercel it is served straight from
-// the global edge CDN — no extra setup. Point DRONE_FILM at an external CDN
+// the global edge CDN, no extra setup. Point DRONE_FILM at an external CDN
 // URL (e.g. Cloudinary) only if you later want to offload that bandwidth.
 export const DRONE_FILM = "/video/ynad-drone.mp4";
 
@@ -63,42 +63,43 @@ export const ROOMS = [
       "/rooms/vintage-home/entrance.jpg",
     ],
     blurb:
-      "A standalone heritage cottage with a green-tiled roof, vaulted wood ceilings and a sitting room dressed in antique cane furniture — old-world Wayanad for families and friends.",
+      "A standalone heritage cottage with a green-tiled roof, vaulted wood ceilings and a sitting room dressed in antique cane furniture, old-world Wayanad for families and friends.",
     details: ["Standalone cottage", "Heritage interiors", "Sitting room"],
     wa: "Hi YNAD Mount Resort! I'd like to check availability for the Vintage Home.",
 
     tagline: "A standalone heritage cottage in the gardens",
     maxOccupancy: 4,
+    bedType: "Queen",
     aboutKicker: "The Cottage",
     aboutLead: "A house to",
     aboutEm: "settle into",
     specs: [
       { label: "Sleeps", value: "2 Adults + 2 Children" },
-      { label: "Bed", value: "King-size" },
+      { label: "Bed", value: "Queen-size" },
       { label: "Style", value: "Heritage cottage" },
       { label: "Layout", value: "Bedroom + sitting room" },
     ],
     description: [
-      "Set on its own in the gardens, the Vintage Home is a tribute to old planter's Wayanad — a green-roofed cottage with thick walls, stone-block corners and a stamped-stone courtyard that catches the morning mist.",
-      "Inside, a vaulted teak ceiling rises over a wood-panelled sitting room furnished with hand-carved cane settees, a vintage wall clock and framed hill-country prints — a room that feels like a grandparent's house, only quieter.",
-      "The bedroom carries the same warmth: a polished-wood ceiling, soft linen with a touch of forest green and a lamp-lit niche — while a tea-and-coffee corner by the entrance gets your slow mornings going.",
+      "Set on its own in the gardens, the Vintage Home is a tribute to old planter's Wayanad, a green-roofed cottage with thick walls, stone-block corners and a stamped-stone courtyard that catches the morning mist.",
+      "Inside, a vaulted teak ceiling rises over a wood-panelled sitting room furnished with hand-carved cane settees, a vintage wall clock and framed hill-country prints, a room that feels like a grandparent's house, only quieter.",
+      "The bedroom carries the same warmth: a polished-wood ceiling, soft linen with a touch of forest green and a lamp-lit niche, while a tea-and-coffee corner by the entrance gets your slow mornings going.",
     ],
     roomFeatures: [
       "Standalone heritage cottage",
       "Separate wood-panelled sitting room",
       "Vaulted teak ceilings",
-      "King-size bed with premium linen",
+      "Queen-size bed with latex mattress & premium linen",
       "Antique cane furniture",
       "Wardrobe & storage",
       "Tea & coffee corner",
       "En-suite bathroom",
-      "Ceiling & wall fans",
+      "Wall-mounted fan",
       "24-hour hot water",
       "Complimentary high-speed WiFi",
       "Private courtyard",
       "Daily housekeeping",
     ],
-    metaTitle: "Vintage Home in Wayanad — Heritage Cottage at YNAD Mount Resort",
+    metaTitle: "Vintage Home in Wayanad: Heritage Cottage at YNAD Mount Resort",
     metaDescription:
       "The Vintage Home at YNAD Mount Resort, Wayanad: a standalone heritage cottage with vaulted teak ceilings, a wood-panelled sitting room and antique cane furniture. Check availability on WhatsApp.",
     keywords: [
@@ -123,41 +124,47 @@ export const ROOMS = [
       "/rooms/premium-suite/bedroom-2.jpg",
     ],
     blurb:
-      "A refined king suite with an in-room lounge, a private balcony framing the valley and a soaking tub set to the sunset — made for couples who want the view in every room.",
-    details: ["Valley-view balcony", "Soaking bathtub", "King bed"],
+      "A refined king suite with an in-room lounge, two private balconies framing the valley and a soaking tub set to the sunset, made for couples who want the view in every room.",
+    details: ["Two valley balconies", "Soaking bathtub", "King bed"],
     wa: "Hi YNAD Mount Resort! I'd like to check availability for the Premium Suite.",
 
-    tagline: "King suite with a valley-view balcony & soaking tub",
+    tagline: "King suite with two valley-view balconies & a soaking tub",
     maxOccupancy: 3,
+    bedType: "King",
     aboutKicker: "The Suite",
     aboutLead: "Built around",
     aboutEm: "the view",
     specs: [
       { label: "Sleeps", value: "2 Adults + 1 Child" },
       { label: "Bed", value: "King-size" },
-      { label: "Outlook", value: "Private valley balcony" },
+      { label: "Outlook", value: "Two valley balconies" },
       { label: "Layout", value: "Bedroom + lounge" },
     ],
     description: [
-      "The Premium Suite is built around the view. A king bed sits against a back-lit, forest-green headboard, while full-height drapes pull back to a private balcony — ornate ironwork, hanging lanterns and the valley falling away into palm and forest below.",
+      "The Premium Suite is built around the view. A king bed sits against a back-lit, forest-green headboard, while full-height drapes pull back to two private balconies, with ornate ironwork, hanging lanterns and the valley falling away into palm and forest below.",
       "There's room to linger indoors too: a leather lounge by the windows for evening drinks, a patterned rug underfoot and warm wood detailing that keeps the modern lines feeling soft.",
-      "Best of all is the bath — a deep soaking tub framed by a window onto the hills, so the sunset comes with you. It's the kind of room couples book once and remember for a long time.",
+      "Best of all is the bath, a deep soaking tub framed by a window onto the hills, so the sunset comes with you. It's the kind of room couples book once and remember for a long time.",
     ],
     roomFeatures: [
-      "Private valley-view balcony",
+      "Two private valley-view balconies",
       "Soaking bathtub with a view",
       "In-room lounge seating",
-      "King-size bed with premium linen",
+      "King-size bed with latex mattress & premium linen",
       "Back-lit upholstered headboard",
       "Air-conditioned",
+      "Wall-mounted fan",
       "Floor-to-ceiling drapes",
       "Marble-topped nightstands",
+      "Large-screen TV",
+      "Tea & coffee tray",
+      "Dressing table with mirror",
+      "Direct-dial phone to reception",
       "En-suite bathroom with hot water",
       "Balcony seating",
       "Complimentary high-speed WiFi",
       "Daily housekeeping",
     ],
-    metaTitle: "Premium Suite in Wayanad — Valley-View Balcony & Bathtub",
+    metaTitle: "Premium Suite in Wayanad: Valley-View Balcony & Bathtub",
     metaDescription:
       "The Premium Suite at YNAD Mount Resort, Wayanad: a king suite with an in-room lounge, a private valley-view balcony and a soaking bathtub overlooking the hills. Check availability on WhatsApp.",
     keywords: [
@@ -173,7 +180,7 @@ export const ROOMS = [
     slug: "junior-suite",
     hasPage: true,
     image: "/rooms/junior-suite/bedroom-balcony.jpg",
-    // Auto-fading gallery — real photographs of the suite, in viewing order.
+    // Auto-fading gallery: real photographs of the suite, in viewing order.
     images: [
       "/rooms/junior-suite/bedroom-balcony.jpg",
       "/rooms/junior-suite/living-room.jpg",
@@ -182,13 +189,14 @@ export const ROOMS = [
       "/rooms/junior-suite/bathroom.jpg",
     ],
     blurb:
-      "A suite with room to breathe — a king bedroom that opens onto a private balcony, a separate living lounge and a marble-and-teak bathroom. Room to spread out, slow down and let Wayanad in.",
+      "A suite with room to breathe: a king bedroom that opens onto a private balcony, a separate living lounge and a marble-and-teak bathroom. Room to spread out, slow down and let Wayanad in.",
     details: ["Private balcony", "Separate living room", "King bed"],
     wa: "Hi YNAD Mount Resort! I'd like to check availability for the Junior Suite.",
 
     // ── Detail-page content ──────────────────────────────────────
     tagline: "Living room, private balcony and valley views",
     maxOccupancy: 3,
+    bedType: "King",
     aboutKicker: "The Suite",
     aboutLead: "Room to",
     aboutEm: "spread out",
@@ -199,19 +207,19 @@ export const ROOMS = [
       { label: "Layout", value: "Bedroom + living lounge" },
     ],
     description: [
-      "The Junior Suite is where YNAD gives you room to breathe. A king bedroom — wrapped in warm teak panelling, soft white linen and a flush of forest green — opens through full-height glass onto your own private balcony, where the valley and the tea slopes drift in and out of the mist.",
-      "Just beyond the bed sits a separate living lounge: deep leather seating, a low coffee table and a candle-lit marble feature wall. It's the kind of space made for slow evenings — a book, a quiet drink, or simply the sound of rain on the hills.",
-      "A backlit dresser, flat-screen TV and tea-and-coffee corner keep things easy, while the en-suite — all marble, teak and a glass-enclosed shower — turns the everyday into something a little more indulgent.",
+      "The Junior Suite is where YNAD gives you room to breathe. A king bedroom, wrapped in warm teak panelling, soft white linen and a flush of forest green, opens through full-height glass onto your own private balcony, where the valley and the tea slopes drift in and out of the mist.",
+      "Just beyond the bed sits a separate living lounge: deep leather seating, a low coffee table and a candle-lit marble feature wall. It's the kind of space made for slow evenings: a book, a quiet drink, or simply the sound of rain on the hills.",
+      "A backlit dresser, flat-screen TV and tea-and-coffee corner keep things easy, while the en-suite, all marble, teak and a glass-enclosed shower, turns the everyday into something a little more indulgent.",
     ],
     roomFeatures: [
       "Private furnished balcony",
       "Separate living lounge",
-      "King-size bed with premium linen",
+      "King-size bed with latex mattress & premium linen",
       "Air-conditioned",
-      "Ceiling & wall fans",
+      "Wall-mounted fan",
       "En-suite bathroom with glass shower",
-      "Marble vanity with twin basins",
-      "Backlit mirror & hair dryer",
+      "Marble vanity with single basin",
+      "Backlit mirror & hairdryer (on request)",
       "Flat-screen TV",
       "Tea & coffee maker",
       "Wardrobe & dresser",
@@ -220,7 +228,7 @@ export const ROOMS = [
       "Complimentary high-speed WiFi",
       "Daily housekeeping",
     ],
-    metaTitle: "Junior Suite in Wayanad — Private Balcony & Living Room",
+    metaTitle: "Junior Suite in Wayanad: Private Balcony & Living Room",
     metaDescription:
       "The Junior Suite at YNAD Mount Resort, Wayanad: a spacious king bedroom with a private balcony, a separate living lounge and a marble en-suite bathroom. Check availability on WhatsApp.",
     keywords: [
@@ -248,7 +256,7 @@ export const OFFERS = [
     title: "Honeymoon Hideaway",
     deal: "Candlelight dinner + room styling",
     note: "A complimentary romantic dinner and floral room décor for newly-weds on stays of 2+ nights.",
-    wa: "Hi YNAD Mount Resort! We're planning our honeymoon — could you share the Honeymoon Hideaway details?",
+    wa: "Hi YNAD Mount Resort! We're planning our honeymoon. Could you share the Honeymoon Hideaway details?",
   },
   {
     title: "Early Bird",
@@ -258,14 +266,14 @@ export const OFFERS = [
   },
 ];
 
-// Full amenity list — shown in full on /amenities; the `highlight` items
+// Full amenity list, shown in full on /amenities; the `highlight` items
 // also appear in the compact strip on the homepage.
 export const AMENITIES = [
   {
     name: "Infinity Pool",
     // Real YNAD photo (optimized to 1200px-wide JPEG in /public/amenities)
     image: "/amenities/pool.jpg",
-    desc: "Swim to the edge and watch the valley fall away below — best at sunrise, when the mist is still in the trees.",
+    desc: "Swim to the edge and watch the valley fall away below, best at sunrise, when the mist is still in the trees. Maintained with a gentle salt-chlorination system for a softer, low-chlorine swim.",
     included: true,
     highlight: true,
   },
@@ -295,7 +303,7 @@ export const AMENITIES = [
   {
     name: "BBQ Facility",
     image: u("photo-1555939594-58d7cb561ad1", 800),
-    desc: "Grill under the stars — we set up the barbecue, you bring the appetite.",
+    desc: "Grill under the stars. We set up the barbecue, you bring the appetite.",
     included: false,
     badge: "On request",
     highlight: true,
@@ -303,7 +311,7 @@ export const AMENITIES = [
   {
     name: "Indoor Games",
     image: u("photo-1611251135345-18c56206b863", 800),
-    desc: "Table tennis, carrom and more — friendly rivalries for the rainy afternoons.",
+    desc: "Table tennis, carrom and more, friendly rivalries for the rainy afternoons.",
     included: true,
     highlight: true,
   },
@@ -347,7 +355,7 @@ export const AMENITIES = [
   {
     name: "Ample Car Parking",
     image: u("photo-1506521781263-d8422e82f27a", 800),
-    desc: "Plenty of secure, on-site parking — arrive and forget about the car.",
+    desc: "Plenty of secure, on-site parking. Arrive and forget about the car.",
     included: true,
   },
   {
@@ -365,7 +373,7 @@ export const AMENITIES = [
   {
     name: "Free WiFi",
     image: u("photo-1606904825846-647eb07f5be2", 800),
-    desc: "Complimentary high-speed WiFi across the property — connect, or don't.",
+    desc: "Complimentary high-speed WiFi across the property. Connect, or don't.",
     included: true,
   },
   {
@@ -412,7 +420,7 @@ export const TESTIMONIALS = [
   },
 ];
 
-// 540×960 vertical renditions — the reel cards render ~264px wide, so this
+// 540×960 vertical renditions, the reel cards render ~264px wide, so this
 // is already retina-sharp and cuts the marquee's video payload by ~70%
 // (~26MB total vs ~90MB at 1080×1920).
 export const REELS = [
@@ -449,11 +457,11 @@ export const REELS = [
 export const FAQS = [
   {
     q: "Where exactly is YNAD Mount Resort located?",
-    a: "We are at Valathoor, Rippon, near Meppadi in Wayanad, Kerala (PIN 673577) — about 20 minutes from Kalpetta and close to Soochipara Falls, Chembra Peak and the Rippon tea estates.",
+    a: "We are at Valathoor, Rippon, near Meppadi in Wayanad, Kerala (PIN 673577), about 20 minutes from Kalpetta and close to Soochipara Falls, Chembra Peak and the Rippon tea estates.",
   },
   {
     q: "What is the best time to visit Wayanad?",
-    a: "Wayanad is a year-round destination. October to May brings clear mountain views and pleasant weather, while June to September is monsoon season — mist, rain and the moody climate Wayanad is famous for.",
+    a: "Wayanad is a year-round destination. October to May brings clear mountain views and pleasant weather, while June to September is monsoon season: mist, rain and the moody climate Wayanad is famous for.",
   },
   {
     q: "How do I book a room?",

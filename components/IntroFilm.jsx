@@ -33,7 +33,7 @@ export default function IntroFilm() {
     return () => io.disconnect();
   }, []);
 
-  // play ONLY the visible clip — the hidden one stays paused so it doesn't
+  // play ONLY the visible clip; the hidden one stays paused so it doesn't
   // stream or decode in the background (saves data + battery)
   useEffect(() => {
     videoRefs.current.forEach((v, i) => {
@@ -61,7 +61,7 @@ export default function IntroFilm() {
       ))}
       <div className="intro-film__scrim" />
       <span className="intro-film__tag">
-        The hills around YNAD — in real time
+        The hills around YNAD, in real time
       </span>
     </div>
   );

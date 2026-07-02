@@ -12,7 +12,7 @@ export default function CtaBand() {
             The mist doesn&apos;t wait, <em>and the best weekends go first</em>
           </h2>
           <p>
-            Message us on WhatsApp — a real person replies in minutes with
+            Message us on WhatsApp. A real person replies in minutes with
             availability and our best direct rates.
           </p>
           <a

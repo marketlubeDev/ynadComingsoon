@@ -50,7 +50,11 @@ export default async function RoomPage({ params }) {
     name: room.name,
     description: room.metaDescription || room.blurb,
     image: gallery.map((src) => `${SITE.baseUrl}${src}`),
-    bed: { "@type": "BedDetails", typeOfBed: "King", numberOfBeds: 1 },
+    bed: {
+      "@type": "BedDetails",
+      typeOfBed: room.bedType || "King",
+      numberOfBeds: 1,
+    },
     occupancy: {
       "@type": "QuantitativeValue",
       unitText: "person",
