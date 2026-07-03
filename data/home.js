@@ -151,8 +151,7 @@ export const ROOMS = [
       "In-room lounge seating",
       "King-size bed with latex mattress & premium linen",
       "Back-lit upholstered headboard",
-      "Air-conditioned",
-      "Wall-mounted fan",
+      "Air conditioning and wall-mounted fan",
       "Floor-to-ceiling drapes",
       "Marble-topped nightstands",
       "Large-screen TV",
@@ -273,7 +272,7 @@ export const AMENITIES = [
     name: "Infinity Pool",
     // Real YNAD photo (optimized to 1200px-wide JPEG in /public/amenities)
     image: "/amenities/pool.jpg",
-    desc: "Swim to the edge and watch the valley fall away below, best at sunrise, when the mist is still in the trees. Maintained with a gentle salt-chlorination system for a softer, low-chlorine swim.",
+    desc: "Swim to the edge and watch the valley fall away below, best at sunrise, when the mist is still in the trees. A natural salt-water system keeps the water soft and gentle on skin and eyes, free of harsh chlorine odour, for a cleaner and more luxurious swim.",
     included: true,
     highlight: true,
   },
